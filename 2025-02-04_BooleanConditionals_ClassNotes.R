@@ -1,5 +1,4 @@
-# 2025-02-04: 
-# Booleans + Conditionals
+# 2025-02-04: boolean+conditional
 
 vec=c(1,0,2,1)
 vec
