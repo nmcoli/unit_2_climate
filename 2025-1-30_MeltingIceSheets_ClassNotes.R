@@ -111,8 +111,25 @@ min(ant_ice_loss$mass_Gt)
 ## [1] -2777.78
 
 barplot(height=c(min(ant_ice_loss$mass_Gt), min(grn_ice_loss$mass_Gt)))
-# 
 # Barplot of largest observed ice loss in Antarctica and Greenland
+#   this creates a barplot: the function has a height argument where the height argument specifies the values for the bars where c(...) creates a vector with two values. 
+#  the first value is the minimum number from the mass_Gt column of the ant_ice_loss data frame
+# the second is the same but for the Greenland Dataframe. 
+#  in summary, the first bar represents the minimum ice loss in the Antarctic dataset. 
+#  the second bar represents the minimum ice loss in the Greenland dataset. 
 
-# Flip to negative to positive, add x-axis labels, add more tick marks on y-axis, add y-axis title
+# below is an improved plot with more description
+
+barplot(height = c(min(ant_ice_loss$mass_Gt), min(grn_ice_loss$mass_Gt)),
+        names.arg = c("Antarctica", "Greenland"),
+        ylab = "Ice Loss (Gt)",
+        main = "Minimum Ice Loss in Antarctica and Greenland")
+
+
 barplot(height=c(min(ant_ice_loss$mass_Gt)*(-1), min(grn_ice_loss$mass_Gt)*(-1)), names.arg=c("Antarctica","Greenland"), ylim=c(0,6000), ylab="Ice loss in Gt")
+# Flip to negative to positive, add x-axis labels, add more tick marks on y-axis, add y-axis title
+
+# this does the same as above, but multiplies the minimum by 1 for better visualization. It also labels the x acis bars as "Antarctica and Greenland". The y axis limit range is set from 0 to 6,000. ylab = "Ice Loss in Gt" 
+
+#EXERCISE 1.2
+# Calculate the average annual ice loss (a.k.a. the annual rate of ice loss) for each ice sheet by dividing the change in ice lost from the beginning to the end of the time series by the total time that passed. Then display the ice loss rates in a bar graph. Save the bar graph into the figures/ directory in this repo. 
